@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-redis-config
+data:
+  redis-config: |
+    cpu 200m
+    maxmemory 200Mi
+    maxmemory-policy allkeys-lru 
+  kind: Service
+  metadata:
+  name: redis
+  labels:
+    app: redis
